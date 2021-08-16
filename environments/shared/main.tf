@@ -14,7 +14,7 @@
 
 
 locals {
-  env = "prod"
+  env = "shared"
 }
 
 provider "google" {
@@ -22,7 +22,7 @@ provider "google" {
 }
 
 module "vpc" {
-  source  = "../../modules/vpc"
+  source  = "../../modules/shared_vpc"
   project = "${var.project}"
   env     = "${local.env}"
 }

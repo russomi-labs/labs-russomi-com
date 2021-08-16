@@ -13,28 +13,22 @@
 # limitations under the License.
 
 
-locals {
-  env = "prod"
-}
-
-provider "google" {
-  project = "${var.project}"
-}
-
 module "vpc" {
-  source  = "../../modules/vpc"
-  project = "${var.project}"
-  env     = "${local.env}"
-}
+  source  = "terraform-google-modules/network/google"
+  version = "3.3.0"
 
-module "http_server" {
-  source  = "../../modules/http_server"
-  project = "${var.project}"
-  subnet  = "${module.vpc.subnet}"
-}
+  project_id   = "${var.project}"
+  network_name = "${var.env}"
 
-module "firewall" {
-  source  = "../../modules/firewall"
-  project = "${var.project}"
-  subnet  = "${module.vpc.subnet}"
+  subnets = [
+    {
+      subnet_name   = "${var.env}-subnet-01"
+      subnet_ip     = "10.30.10.0/24"
+      subnet_region = "us-west1"
+    },
+  ]
+
+  secondary_ranges = {
+    "${var.env}-subnet-01" = []
+  }
 }
