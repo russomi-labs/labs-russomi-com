@@ -11,8 +11,6 @@ This is the repo for the [Managing infrastructure as code with Terraform, Cloud 
 - [Enforcing Cloud Build execution success before merging branches](#enforcing-cloud-build-execution-success-before-merging-branches)
 - [Promoting changes to the development environment](#promoting-changes-to-the-development-environment)
 - [Promoting changes to the production environment](#promoting-changes-to-the-production-environment)
-- [Configuring your `dev` environment](#configuring-your-dev-environment)
-- [Promoting your environment to `production`](#promoting-your-environment-to-production)
 - [What's next](#whats-next)
 
 ## Overview
@@ -306,26 +304,6 @@ You have successfully configured a serverless infrastructure-as-code pipeline on
 - Add deployments for separate use cases.
 - Create additional environments to reflect your needs.
 - Use a project per environment instead of a VPC per environment.
-
-## Configuring your `dev` environment
-
-```bash
-cd environments/dev
-terraform init
-terraform plan
-terraform apply
-terraform destroy
-```
-
-## Promoting your environment to `production`
-
-```bash
-cd environments/prod
-terraform init
-terraform plan
-terraform apply
-terraform destroy
-```
 
 ## What's next
 
