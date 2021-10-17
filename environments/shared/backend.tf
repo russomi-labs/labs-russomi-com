@@ -15,7 +15,7 @@
 
 terraform {
   backend "gcs" {
-    bucket = "iac-gitops-tfstate"
+    bucket = "labs-russomi-com-tfstate"
     prefix = "env/shared"
   }
 }
