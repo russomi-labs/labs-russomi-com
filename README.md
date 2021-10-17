@@ -51,7 +51,7 @@ git config --global user.name "your-name"
 
 `environments/dev/backend.tf` :
 
-```json
+```hcl
   terraform {
     backend "gcs" {
       bucket = "PROJECT_ID-tfstate"
