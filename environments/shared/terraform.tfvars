@@ -1,1 +1,1 @@
-project="iac-gitops"
+project = "labs-russomi-com"
