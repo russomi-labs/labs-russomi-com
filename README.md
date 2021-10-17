@@ -2,6 +2,19 @@
 
 This is the repo for the [Managing infrastructure as code with Terraform, Cloud Build, and GitOps](https://cloud.google.com/solutions/managing-infrastructure-as-code) tutorial. This tutorial explains how to manage infrastructure as code with Terraform and Cloud Build using the popular GitOps methodology.
 
+- [Overview](#overview)
+- [Before you begin](#before-you-begin)
+- [Configuring Terraform to store state in a Cloud Storage bucket](#configuring-terraform-to-store-state-in-a-cloud-storage-bucket)
+- [Granting permissions to your Cloud Build service account](#granting-permissions-to-your-cloud-build-service-account)
+- [Directly connecting Cloud Build to your GitHub repository](#directly-connecting-cloud-build-to-your-github-repository)
+- [Changing your environment configuration in a new feature branch](#changing-your-environment-configuration-in-a-new-feature-branch)
+- [Enforcing Cloud Build execution success before merging branches](#enforcing-cloud-build-execution-success-before-merging-branches)
+- [Promoting changes to the development environment](#promoting-changes-to-the-development-environment)
+- [Promoting changes to the production environment](#promoting-changes-to-the-production-environment)
+- [Configuring your `dev` environment](#configuring-your-dev-environment)
+- [Promoting your environment to `production`](#promoting-your-environment-to-production)
+- [What's next](#whats-next)
+
 ## Overview
 
 In this tutorial, you use a single Git repository to define your cloud infrastructure. You orchestrate this infrastructure by having different branches corresponding to different environments:
@@ -294,21 +307,6 @@ You have successfully configured a serverless infrastructure-as-code pipeline on
 - Create additional environments to reflect your needs.
 - Use a project per environment instead of a VPC per environment.
 
-## What's next
-
-- Consider using [Cloud Foundation Toolkit templates](https://cloud.google.com/foundation-toolkit) to quickly build a repeatable enterprise-ready foundation in Google Cloud.
-- Watch [Repeatable GCP Environments at Scale With Cloud Build Infra-As-Code Pipelines](https://www.youtube.com/watch?v=3vfXQxWJazM) from Next' 19 about the GitOps workflow described in this tutorial.
-- Check out the [GitOps-style continuous delivery with Cloud Build](https://cloud.google.com/kubernetes-engine/docs/tutorials/gitops-cloud-build) tutorial.
-- Take a look at more advanced Cloud Build features: [Configuring the order of build steps](https://cloud.google.com/build/docs/configuring-builds/configure-build-step-order), [Building, testing, and deploying artifacts](https://cloud.google.com/build/docs/configuring-builds/build-test-deploy-artifacts), and [Creating custom build steps](https://cloud.google.com/build/docs/create-custom-build-steps).
-- Explore reference architectures, diagrams, tutorials, and best practices about Google Cloud. Take a look at our [Cloud Architecture Center](https://cloud.google.com/architecture).
-- Read our resources about [DevOps](https://cloud.google.com/devops).
-- Learn more about the DevOps capabilities related to this tutorial:
-  - [Version control](https://cloud.google.com/solutions/devops/devops-tech-version-control)
-  - [Continuous integration](https://cloud.google.com/solutions/devops/devops-tech-continuous-integration)
-  - [Continuous delivery](https://cloud.google.com/solutions/devops/devops-tech-continuous-delivery)
-  - [Continuous testing](https://cloud.google.com/solutions/devops/devops-tech-test-automation)
-- Take the [DevOps quick check](https://www.devops-research.com/quickcheck.html) to understand where you stand in comparison with the rest of the industry.
-
 ## Configuring your `dev` environment
 
 ```bash
@@ -328,3 +326,18 @@ terraform plan
 terraform apply
 terraform destroy
 ```
+
+## What's next
+
+- Consider using [Cloud Foundation Toolkit templates](https://cloud.google.com/foundation-toolkit) to quickly build a repeatable enterprise-ready foundation in Google Cloud.
+- Watch [Repeatable GCP Environments at Scale With Cloud Build Infra-As-Code Pipelines](https://www.youtube.com/watch?v=3vfXQxWJazM) from Next' 19 about the GitOps workflow described in this tutorial.
+- Check out the [GitOps-style continuous delivery with Cloud Build](https://cloud.google.com/kubernetes-engine/docs/tutorials/gitops-cloud-build) tutorial.
+- Take a look at more advanced Cloud Build features: [Configuring the order of build steps](https://cloud.google.com/build/docs/configuring-builds/configure-build-step-order), [Building, testing, and deploying artifacts](https://cloud.google.com/build/docs/configuring-builds/build-test-deploy-artifacts), and [Creating custom build steps](https://cloud.google.com/build/docs/create-custom-build-steps).
+- Explore reference architectures, diagrams, tutorials, and best practices about Google Cloud. Take a look at our [Cloud Architecture Center](https://cloud.google.com/architecture).
+- Read our resources about [DevOps](https://cloud.google.com/devops).
+- Learn more about the DevOps capabilities related to this tutorial:
+  - [Version control](https://cloud.google.com/solutions/devops/devops-tech-version-control)
+  - [Continuous integration](https://cloud.google.com/solutions/devops/devops-tech-continuous-integration)
+  - [Continuous delivery](https://cloud.google.com/solutions/devops/devops-tech-continuous-delivery)
+  - [Continuous testing](https://cloud.google.com/solutions/devops/devops-tech-test-automation)
+- Take the [DevOps quick check](https://www.devops-research.com/quickcheck.html) to understand where you stand in comparison with the rest of the industry.
