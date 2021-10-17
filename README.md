@@ -15,6 +15,8 @@ This is the repo for the [Managing infrastructure as code with Terraform, Cloud 
 
 ## Overview
 
+![Architecture](https://cloud.google.com/architecture/images/managing-infrastructure-as-code-infrastructure.svg)
+
 In this tutorial, you use a single Git repository to define your cloud infrastructure. You orchestrate this infrastructure by having different branches corresponding to different environments:
 
 - The `dev` branch contains the latest changes that are applied to the development environment.
